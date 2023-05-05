@@ -26,10 +26,11 @@ module.exports = () => {
         swSrc: './src-sw.js',
         swDest: 'src-sw.js',
       }),
+      // Creates the applications manifest file
       new WebpackPwaManifest({
         fingerprints: false,
         inject: true,
-        name: 'pwa-text-editor',
+        name: 'PWA Text Editor',
         short_name: 'TxtEditor',
         description: 'A simple text editor',
         background_color: '#ffffff',
@@ -59,7 +60,7 @@ module.exports = () => {
             loader: 'babel-loader',
             options: {
               presets: ['@babel/preset-env'],
-              plugins: ['plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
+              plugins: ['@babel/plugin-proposal-object-rest-spread', '@babel/transform-runtime'],
             },
           },
         },
